@@ -203,7 +203,9 @@ function extractExtraFields(job) {
     contact_email: job.contact_email || "N/A",
   };
 }
-
+app.get('/', (req, res) => {
+  res.send('API is running...');
+});
 app.get("/combined-jobs", async (req, res) => {
   try {
     const results = await Promise.all(apiServices.map(callApiService));
